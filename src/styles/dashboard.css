@@ -1,0 +1,23 @@
+.navbar.header-title {
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+.row.dashboard-row {
+  margin-top: 3rem;
+  /* background-color: #fff; */
+  padding-top: 2rem;
+}
+.dashboard-items {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2rem;
+  align-items: center;
+}
+.form-select.filter {
+  width: auto;
+}
+.filter-items{
+    display: flex;
+    gap: 1rem;
+}

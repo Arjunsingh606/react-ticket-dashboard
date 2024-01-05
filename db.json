@@ -1,0 +1,79 @@
+{
+  "users": [
+    {
+      "firstName": "Hector",
+      "lastName": "Olson",
+      "email": "kotyxeta@mailinator.com",
+      "password": "Culpa quae eiusmod ",
+      "role": "",
+      "Role": "User",
+      "id": 128
+    },
+    {
+      "firstName": "India",
+      "lastName": "Pope",
+      "email": "ketifaw@mailinator.com",
+      "password": "Eum error incididunt",
+      "role": "User",
+      "id": 129
+    },
+    {
+      "firstName": "Chaim",
+      "lastName": "Vance",
+      "email": "honugelej@mailinator.com",
+      "password": "Adipisicing fugit r",
+      "role": "Admin",
+      "id": 130
+    },
+    {
+      "firstName": "Arjun",
+      "lastName": "Singh",
+      "email": "singharjun.u@gmail.com",
+      "password": "rahul@123",
+      "role": "Admin",
+      "id": 131
+    },
+    {
+      "firstName": "Arjun",
+      "lastName": "Singh",
+      "email": "singharjun.u@gmail.com",
+      "password": "rahul123ii",
+      "role": "User",
+      "id": 132
+    },
+    {
+      "firstName": "Samantha",
+      "lastName": "Hayes",
+      "email": "hywihuq@mailinator.com",
+      "password": "Fugit cupiditate al",
+      "role": "User",
+      "id": 133
+    },
+    {
+      "firstName": "Quynn",
+      "lastName": "Anderson",
+      "email": "kapo@mailinator.com",
+      "password": "In est cumque delect",
+      "role": "Admin",
+      "id": 134
+    }
+  ],
+  "ticket": [
+    {
+      "firstName": "Samantha",
+      "lastName": "Hayes",
+      "email": "hywihuq@mailinator.com",
+      "password": "Fugit cupiditate al",
+      "role": "User",
+      "id": 133
+    },
+    {
+      "firstName": "Quynn",
+      "lastName": "Anderson",
+      "email": "kapo@mailinator.com",
+      "password": "In est cumque delect",
+      "role": "Admin",
+      "id": 134
+    }
+  ]
+}
