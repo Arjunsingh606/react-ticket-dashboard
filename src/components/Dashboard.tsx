@@ -68,9 +68,8 @@ const Dashboard = () => {
     fetchData();
   }, []);
 
-  const handleSearchTicket = async (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>, startDate: Date, endDate: Date) => {
+  const handleSearchTicket = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const searchInput = e.target.value.toLowerCase();
-    const searchFilter = e.target.value;
     setSearch(searchInput);
 
     if (!searchInput) {
@@ -81,44 +80,22 @@ const Dashboard = () => {
           .toLowerCase()
           .includes(searchInput)
       );
-
-      const priorityFilterTicket = !searchFilter
-        ? filterTicket
-        : filterTicket.filter(
-          (item) => item.priority.toLowerCase() === searchFilter.toLowerCase()
-        );
-      const dateFilterTickets = filterTicket.filter((ticket) => {
-        const ticketDate = new Date(ticket.date);
-
-        return ticketDate >= startDate && ticketDate <= endDate;
-      });
-      const allFilter = searchedTickets && priorityFilterTicket && dateFilterTickets
-      setTicket(allFilter);
+      setTicket(searchedTickets);
     }
   };
-  //   date picker
-  //  const handleDatesChange = (startDate: Date, endDate: Date) => {
 
-  //   const filteredTickets = filterTicket.filter((ticket) => {
-  //     const ticketDate = new Date(ticket.date);
+  const handleFilter = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const searchFilter = e.target.value;
+    setFilter(searchFilter);
 
-  //     return ticketDate >= startDate && ticketDate <= endDate;
-  //   });
-  //   setTicket(filteredTickets);
-  // };
+    const filteredTicket = !searchFilter
+      ? filterTicket
+      : filterTicket.filter(
+        (item) => item.priority.toLowerCase() === searchFilter.toLowerCase()
+      );
 
-  // const handleFilter = (e: React.ChangeEvent<HTMLSelectElement>) => {
-  //   const searchFilter = e.target.value;
-  //   setFilter(searchFilter);
-
-  //   const filteredTicket = !searchFilter
-  //     ? filterTicket
-  //     : filterTicket.filter(
-  //       (item) => item.priority.toLowerCase() === searchFilter.toLowerCase()
-  //     );
-
-  //   setTicket(filteredTicket);
-  // };
+    setTicket(filteredTicket);
+  };
 
   const deleteTicket = async (id: string) => {
     try {
@@ -168,7 +145,16 @@ const Dashboard = () => {
     }
   };
 
-
+  //   date picker
+  const handleDatesChange = (startDate: Date, endDate: Date) => {
+  
+    const filteredTickets = filterTicket.filter((ticket) => {
+      const ticketDate = new Date(ticket.date);
+    
+      return ticketDate >= startDate && ticketDate <= endDate;
+    });
+    setTicket(filteredTickets);
+  };
 
   return (
     <>
@@ -196,7 +182,7 @@ const Dashboard = () => {
               <div className="filter-items">
                 <div>
                   <Form.Group className="mb-3">
-                    <DateRangePicker onDatesChange={handleSearchTicket} />
+                    <DateRangePicker onDatesChange={handleDatesChange} />
                   </Form.Group>
                 </div>
                 <div>
@@ -204,7 +190,7 @@ const Dashboard = () => {
                     name="filter"
                     className="filter"
                     aria-label="filter-search"
-                    onChange={handleSearchTicket}
+                    onChange={handleFilter}
                     value={filter}
                   >
                     <option value="">All Ticket</option>
